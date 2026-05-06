@@ -1,5 +1,7 @@
 const express =  require("express");
 const { createServer } = require('http');
+//Require de mi servidor en tiempo real
+const realTimeServer = require("./realTimeServer");
 const path = require('path');
 //el path es el src
 const app = express();
@@ -26,3 +28,5 @@ app.use(express.static(path.join(__dirname,'public')));
 httpServer.listen( app.get('port'),() => { 
     console.log('La aplicación esta corriendo en el puerto', app.get('port'));
 });
+
+realTimeServer(httpServer);
