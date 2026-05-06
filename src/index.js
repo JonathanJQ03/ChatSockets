@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname,'views'));
 
 //Necesitamos las rutas: Archivos en los cuales vamos a realizar las respectivas consultas
 
-app.use(requiere('./routes')); //No es necesario poner el index,js pq ya por defecto se sobreentiende que se usa ese archivo index
+app.use(require('./routes')); //No es necesario poner el index,js pq ya por defecto se sobreentiende que se usa ese archivo index
 //nuestro index dentro de routes es qn gestiona toda la parte de rutas
 
 //Rutas publicas: Creadas para procesos que necesitan usar el usuario 
