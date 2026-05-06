@@ -11,4 +11,8 @@ router.get("/", (req,res) => {
     res.sendFile(views + "/index.html")
 });
 
+router.get("/", (req,res) => {
+    res.sendFile(views + "/register.html")
+});
+
 module.exports= router;
