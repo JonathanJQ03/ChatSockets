@@ -6,6 +6,7 @@ const path = require('path');
 //el path es el src
 const app = express();
 const httpServer =  createServer(app);
+const cookieParser = require("cookie-parser");
 
 
 //asignar un puerto a la app el puerto por defecto de node es 3000
@@ -13,11 +14,14 @@ const httpServer =  createServer(app);
 app.set('port',process.env.PORT || 3000);
 app.set('views', path.join(__dirname,'views'));
 //La ruta seria: /Software/SistemasDistribuidos/ChatSockets/src/views
-
+//forma de decir que la app va usar directemante algo
+app.use(cookieParser());
 //Necesitamos las rutas: Archivos en los cuales vamos a realizar las respectivas consultas
 
 app.use(require('./routes')); //No es necesario poner el index,js pq ya por defecto se sobreentiende que se usa ese archivo index
 //nuestro index dentro de routes es qn gestiona toda la parte de rutas
+
+
 
 //Rutas publicas: Creadas para procesos que necesitan usar el usuario 
 //Rutas privadas: Acceso a recursos en especifico y acorde el rol
